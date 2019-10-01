@@ -1,19 +1,70 @@
 {
-    "animals": [
-        {
-            "id": 1,
-            "name": "Doodles",
-            "breed": "Poodle"
-        },
-        {
-            "id": 2,
-            "name": "Decker",
-            "breed": "German Sheperd"
-        },
-        {
-            "id": 3,
-            "name": "Esme",
-            "breed": "Pitbull"
-        }
-    ]
+  "animals": [
+    {
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle"
+    },
+    {
+      "id": 2,
+      "name": "Decker",
+      "breed": "German Sheperd"
+    },
+    {
+      "id": 3,
+      "name": "Esme",
+      "breed": "Pitbull"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Kyle",
+      "breed": "idiot"
+    },
+    {
+      "id": 2,
+      "name": "Chad",
+      "breed": "human White Claw"
+    },
+    {
+      "id": 3,
+      "name": "Brittney",
+      "breed": "aspiring country star"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "West Nashville",
+      "address": "300 West Nastyville"
+    },
+    {
+      "id": 2,
+      "name": "North Nashville",
+      "address": "600 North Nowheresville"
+    },
+    {
+      "id": 3,
+      "name": "East Nashville",
+      "address": "900 East Everywhere St."
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Billy",
+      "phone": "615-555-2222"
+    },
+    {
+      "id": 2,
+      "name": "Sara",
+      "phone": "615-777-3333"
+    },
+    {
+      "id": 3,
+      "name": "Taco",
+      "phone": "615-999-9111"
+    }
+  ]
 }
