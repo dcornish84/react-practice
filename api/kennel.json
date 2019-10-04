@@ -23,17 +23,17 @@
     {
       "id": 1,
       "name": "Kyle",
-      "breed": "idiot"
+      "title": "Collar Popper"
     },
     {
       "id": 2,
       "name": "Chad",
-      "breed": "human White Claw"
+      "title": "Human White Claw"
     },
     {
       "id": 3,
       "name": "Brittney",
-      "breed": "aspiring country star"
+      "title": "Manager"
     }
   ],
   "locations": [

@@ -61,10 +61,10 @@ class LocationEditForm extends Component {
                                 required
                                 className="form-control"
                                 onChange={this.handleFieldChange}
-                                id="place"
+                                id="address"
                                 value={this.state.place}
                             />
-                            <label htmlFor="place">Place</label>
+                            <label htmlFor="address">Address</label>
                         </div>
                         <div className="alignRight">
                             <button

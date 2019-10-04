@@ -11,7 +11,7 @@ class OwnerCard extends Component {
                         <img src={require('./owner.PNG')} alt="Boss" />
                     </picture>
                     <h3>Name: <span className="card-ownername">{firstLetterCase(this.props.owner.name)}</span></h3>
-                    <p>Title: {this.props.owner.title}</p>
+                    <p>Phone: {this.props.owner.phone}</p>
                     <Link to={`/owners/${this.props.owner.id}`}><button>Details</button></Link>
                     <button type="button" onClick={() => { this.props.history.push(`/owners/${this.props.owner.id}/edit`) }}>Edit</button>
                     <button type="button" onClick={() => this.props.deleteOwner(this.props.owner.id)}>Let go</button>

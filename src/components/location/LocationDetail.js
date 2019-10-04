@@ -6,7 +6,7 @@ class LocationDetail extends Component {
 
     state = {
         name: "",
-        place: "",
+        address: "",
         url: "",
         loadingStatus: true
     }
@@ -24,7 +24,7 @@ class LocationDetail extends Component {
             .then((location) => {
                 this.setState({
                     name: location.name,
-                    place: location.breed,
+                    address: location.address,
                     url: location.url,
                     loadingStatus: false
                 });
@@ -39,7 +39,7 @@ class LocationDetail extends Component {
                         <img src={require('./location.jpeg')} alt="Location" />
                     </picture>
                     <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
-                    <p>Place: {this.state.place}</p>
+                    <p>Address: {this.state.address}</p>
                     <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Close</button>
                 </div>
             </div>
