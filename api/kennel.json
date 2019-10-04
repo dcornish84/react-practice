@@ -3,17 +3,20 @@
     {
       "id": 1,
       "name": "Doodles",
-      "breed": "Poodle"
+      "breed": "Poodle",
+      "employeeId": 1
     },
     {
       "id": 2,
       "name": "Decker",
-      "breed": "German Sheperd"
+      "breed": "German Sheperd",
+      "employeeId": 3
     },
     {
-      "id": 3,
-      "name": "Esme",
-      "breed": "Pitbull"
+      "name": "turkey burger",
+      "breed": "here",
+      "url": "",
+      "id": 3
     }
   ],
   "employees": [
@@ -47,7 +50,12 @@
     {
       "id": 3,
       "name": "East Nashville",
-      "address": "900 East Everywhere St."
+      "address": "900 East Everywhere"
+    },
+    {
+      "name": "Dog School",
+      "address": "301 Bark Park ",
+      "id": 4
     }
   ],
   "owners": [

@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-//import the components we will need
 import LocationCard from './LocationCard'
-import AnimalManager from '../../modules/AnimalManager'
-
-
+import LocationManager from '../../modules/LocationManager'
+//import './Animal.css'
 
 class LocationList extends Component {
     //define what this component needs to render
@@ -12,9 +10,9 @@ class LocationList extends Component {
     }
 
     deleteLocation = id => {
-        AnimalManager.deleteLocation(id)
+        LocationManager.delete(id)
             .then(() => {
-                AnimalManager.getAllLocations()
+                LocationManager.getAll()
                     .then((newLocations) => {
                         this.setState({
                             locations: newLocations
@@ -22,28 +20,42 @@ class LocationList extends Component {
                     })
             })
     }
-
-    componentDidMount() {
-        console.log("Location LIST: ComponentDidMount");
+    getData = () => {
         //getAll from AnimalManager and hang on to that data; put it in state
-        AnimalManager.getAllLocations()
+        LocationManager.getAll()
             .then((locations) => {
                 this.setState({
                     locations: locations
                 })
             })
     }
+    componentDidMount() {
+        this.getData()
+    }
 
     render() {
-        console.log("LocationList: Render");
         return (
-            <div className="container-cards">
-                {this.state.locations.map(location =>
-                    <LocationCard key={location.id} location={location} deleteLocation={this.deleteLocation} />
-                )}
-            </div>
+
+            <>
+                <section className="section-content">
+                    <button type="button"
+                        className="btn"
+                        onClick={() => { this.props.history.push("/locations/new") }}>
+                        New Location
+                </button>
+                </section>
+                <div className="container-cards">
+                    {this.state.locations.map(location =>
+                        <LocationCard
+                            key={location.id}
+                            location={location}
+                            deleteLocation={this.deleteLocation}
+                            {...this.props} />)}
+                </div>
+            </>
         )
     }
+
 }
 
 export default LocationList

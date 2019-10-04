@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-//import the components we will need
 import EmployeeCard from './EmployeeCard'
-import AnimalManager from '../../modules/AnimalManager'
-import "./Employee.css"
-
+import EmployeeManager from '../../modules/EmployeeManager'
+//import './Animal.css'
 
 class EmployeeList extends Component {
     //define what this component needs to render
@@ -12,9 +10,9 @@ class EmployeeList extends Component {
     }
 
     deleteEmployee = id => {
-        AnimalManager.deleteEmployee(id)
+        EmployeeManager.delete(id)
             .then(() => {
-                AnimalManager.getAllEmployees()
+                EmployeeManager.getAll()
                     .then((newEmployees) => {
                         this.setState({
                             employees: newEmployees
@@ -22,11 +20,9 @@ class EmployeeList extends Component {
                     })
             })
     }
-
     componentDidMount() {
-        console.log("Employee LIST: ComponentDidMount");
-        //getAll from EmployeeManager and hang on to that data; put it in state
-        AnimalManager.getAllEmployees()
+        //getAll from AnimalManager and hang on to that data; put it in state
+        EmployeeManager.getAll()
             .then((employees) => {
                 this.setState({
                     employees: employees
@@ -35,15 +31,18 @@ class EmployeeList extends Component {
     }
 
     render() {
-        console.log("EmployeeList: Render");
         return (
             <div className="container-cards">
-                {this.state.employees.map(employee => (
-                    <EmployeeCard key={employee.id} employee={employee} deleteEmployee={this.deleteEmployee} />
-                ))}
+                {this.state.employees.map(employee =>
+                    <EmployeeCard
+                        key={employee.id}
+                        employee={employee}
+                        deleteEmployee={this.deleteEmployee}
+                        {...this.props} />)}
             </div>
-        );
+        )
     }
+
 }
 
-export default EmployeeList;
+export default EmployeeList

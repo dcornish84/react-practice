@@ -1,31 +1,29 @@
 import React, { Component } from 'react';
-import LocationManager from '../../modules/LocationManager';
+import OwnerManager from '../../modules/OwnerManager';
 //import './AnimalDetail.css'
 
-class LocationDetail extends Component {
+class OwnerDetail extends Component {
 
     state = {
         name: "",
-        place: "",
-        url: "",
-        loadingStatus: true
+        title: "",
+        loadingStatus: true,
     }
 
     handleDelete = () => {
         //invoke the delete function in AnimalManger and re-direct to the animal list.
         this.setState({ loadingStatus: true })
-        LocationManager.delete(this.props.locationId)
-            .then(() => this.props.history.push("/location"))
+        OwnerManager.delete(this.props.ownerId)
+            .then(() => this.props.history.push("/owner"))
     }
     componentDidMount() {
-        console.log("LocationDetail: ComponentDidMount");
+        console.log("OwnerDetail: ComponentDidMount");
         //get(id) from AnimalManager and hang on to that data; put it into state
-        LocationManager.get(this.props.locationId)
-            .then((location) => {
+        OwnerManager.get(this.props.ownerId)
+            .then((owner) => {
                 this.setState({
-                    name: location.name,
-                    place: location.breed,
-                    url: location.url,
+                    name: owner.name,
+                    title: owner.title,
                     loadingStatus: false
                 });
             });
@@ -36,15 +34,15 @@ class LocationDetail extends Component {
             <div className="card">
                 <div className="card-content">
                     <picture>
-                        <img src={require('./location.jpeg')} alt="My Dog" />
+                        <img src={require('./owner.PNG')} alt="Boss" />
                     </picture>
                     <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
-                    <p>Place: {this.state.place}</p>
-                    <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Close</button>
+                    <p>title: {this.state.owner}</p>
+                    <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Let Go</button>
                 </div>
             </div>
         );
     }
 }
 
-export default LocationDetail;
+export default OwnerDetail;

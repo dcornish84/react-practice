@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+//import { Link } from "react-router-dom";
+import { firstLetterCase } from '../../modules/helpers';
 
 class EmployeeCard extends Component {
     render() {
@@ -6,12 +8,12 @@ class EmployeeCard extends Component {
             <div className="card">
                 <div className="card-content">
                     <picture>
-                        <img src={require("./employee.jpg")} alt="Employee" />
+                        <img src={require('./employee.jpg')} alt="My Dog" />
                     </picture>
-                    <h3>
-                        Name: <span className="card-petname">{this.props.employee.name}</span>
-                    </h3>
-                    <p>Breed: {this.props.employee.breed}</p>
+                    <h3>name: <span className="card-employeename">{firstLetterCase(this.props.employee.name)}</span></h3>
+                    <p>title: {this.props.employee.title}</p>
+                    <button type="button" onClick={() => { this.props.history.push(`/employees/${this.props.employee.id}/details`) }}>Details</button>
+                    <button type="button" onClick={() => { this.props.history.push(`/employees/${this.props.employee.id}/edit`) }}>Edit</button>
                     <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Fire</button>
                 </div>
             </div>
