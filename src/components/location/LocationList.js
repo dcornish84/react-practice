@@ -20,7 +20,7 @@ class LocationList extends Component {
                     })
             })
     }
-    getData = () => {
+    componentDidMount() {
         //getAll from AnimalManager and hang on to that data; put it in state
         LocationManager.getAll()
             .then((locations) => {
@@ -29,30 +29,17 @@ class LocationList extends Component {
                 })
             })
     }
-    componentDidMount() {
-        this.getData()
-    }
 
     render() {
         return (
-
-            <>
-                <section className="section-content">
-                    <button type="button"
-                        className="btn"
-                        onClick={() => { this.props.history.push("/locations/new") }}>
-                        New Location
-                </button>
-                </section>
-                <div className="container-cards">
-                    {this.state.locations.map(location =>
-                        <LocationCard
-                            key={location.id}
-                            location={location}
-                            deleteLocation={this.deleteLocation}
-                            {...this.props} />)}
-                </div>
-            </>
+            <div className="container-cards">
+                {this.state.locations.map(location =>
+                    <LocationCard
+                        key={location.id}
+                        loca={location}
+                        deleteLocation={this.deleteLocation}
+                        {...this.props} />)}
+            </div>
         )
     }
 

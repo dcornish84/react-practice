@@ -15,7 +15,7 @@ class LocationDetail extends Component {
         //invoke the delete function in AnimalManger and re-direct to the animal list.
         this.setState({ loadingStatus: true })
         LocationManager.delete(this.props.locationId)
-            .then(() => this.props.history.push("/location"))
+            .then(() => this.props.history.push("/locations"))
     }
     componentDidMount() {
         console.log("LocationDetail: ComponentDidMount");
@@ -36,7 +36,7 @@ class LocationDetail extends Component {
             <div className="card">
                 <div className="card-content">
                     <picture>
-                        <img src={require('./location.jpeg')} alt="My Dog" />
+                        <img src={require('./location.jpeg')} alt="Location" />
                     </picture>
                     <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
                     <p>Place: {this.state.place}</p>

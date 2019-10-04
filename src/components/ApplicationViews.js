@@ -45,14 +45,14 @@ class ApplicationViews extends Component {
                     return <AnimalForm {...props} />
                 }} />
                 {/* Make sure you add the `exact` attribute here */}
-                <Route exact path="/location" render={props => {
+                <Route exact path="/locations" render={props => {
                     if (this.props.user) {
                         return <LocationList {...props} />
                     } else {
                         return <Redirect to="/login" />
                     }
                 }} />
-                <Route path="/location/:locationId(\d+)" render={(props) => {
+                <Route path="/locations/:locationId(\d+)" render={(props) => {
                     // Pass the animalId to the AnimalDetailComponent
                     return <LocationDetail locationId={parseInt(props.match.params.locationId)}{...props} />
                 }} />

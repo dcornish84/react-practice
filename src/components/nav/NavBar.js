@@ -22,7 +22,7 @@ class NavBar extends Component {
                         {(this.props.user) ?
                             <li><Link className="nav-link" to="/animals">Animals</Link></li>
                             : null}
-                        <li><Link className="nav-link" to="/location">Locations</Link></li>
+                        <li><Link className="nav-link" to="/locations">Locations</Link></li>
                         {(this.props.user) ?
                             <>
                                 <li><Link className="nav-link" to="/employees">Employees</Link></li>
